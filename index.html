@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поздравление для Ульяны</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .card {
+            position: relative;
+            width: 350px;
+            height: 450px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.5s;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .message {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff477e;
+            z-index: 1;
+        }
+        .hidden-message {
+            display: none;
+            font-size: 18px;
+            color: #333;
+            z-index: 1;
+        }
+        .flower-image {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.5;
+        }
+        .flower-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" onclick="showMessage()">
+        <div class="message">Нажмите, чтобы открыть 🎉</div>
+        <div class="hidden-message">Дорогая Ульяна, поздравляю тебя с этим замечательным днем! Пусть каждый момент будет наполнен радостью и счастьем. 🌟</div>
+        <div class="flower-image">
+            <img src="IMG_5932.JPG" alt="Цветы">
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.querySelector('.message').style.display = 'none';
+            document.querySelector('.hidden-message').style.display = 'block';
+            document.querySelector('.flower-image').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
